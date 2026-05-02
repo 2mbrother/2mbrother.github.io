@@ -742,14 +742,20 @@
     border:1px solid rgba(232,201,154,.35);
     pointer-events:none;
   }
-  .snap .eyebrow{color:#E8C99A;position:relative;z-index:1}
-  .snap h2{color:#fff;position:relative;z-index:1;margin-bottom:18px}
-  .snap p{
+  .snap-inner{
+    position:relative;
+    z-index:1;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .snap .eyebrow{color:#E8C99A}
+  .snap h2{color:#fff;margin-bottom:18px}
+  .snap .lede-dark{
     color:#F0DFC0;
     font-size:15px;
     max-width:420px;
-    margin:0 auto;
-    position:relative;z-index:1;
+    margin:0 auto 36px;
+
   }
   .snap .script-acc{
     font-family:'Italianno',cursive;
@@ -759,6 +765,65 @@
     line-height:1;
   }
 
+  /* snap gallery — dark variant */
+  .snap-gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin:8px 0 8px;
+  }
+  .snap-gallery .photo{
+    aspect-ratio:4/3;
+    overflow:hidden;
+    background:rgba(0,0,0,.25);
+    border:1px solid rgba(232,201,154,.25);
+    position:relative;
+    cursor:pointer;
+  }
+  .snap-gallery .photo.wide{grid-column:span 2;aspect-ratio:16/10}
+  .snap-gallery .photo img{
+    width:100%;height:100%;object-fit:cover;
+    display:block;
+    transition:transform .6s ease, filter .3s ease;
+  }
+  .snap-gallery .photo:hover img{transform:scale(1.04)}
+  .snap-gallery .photo .ph-fallback{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:13px;
+    color:rgba(232,201,154,.55);
+    letter-spacing:.15em;
+    text-align:center;
+    padding:0 14px;
+  }
+  .snap-gallery .photo img:not([src=""]) + .ph-fallback{display:none}
+  .snap-gallery .photo .more-badge{
+    position:absolute;inset:0;
+    background:rgba(45,18,25,.6);
+    color:#FAF6F0;
+    display:flex;align-items:center;justify-content:center;
+    flex-direction:column;
+    gap:4px;
+    font-family:'Cormorant Garamond',serif;
+    pointer-events:none;
+    opacity:0;
+    transition:opacity .3s ease;
+  }
+  .snap-gallery .photo.has-more .more-badge{opacity:1}
+  .snap-gallery .photo .more-badge .plus{
+    font-size:34px;font-weight:500;line-height:1;
+    letter-spacing:.02em;
+  }
+  .snap-gallery .photo .more-badge .label{
+    font-size:11px;letter-spacing:.4em;
+    color:#E8C99A;
+  }
+  .snap-gallery .photo:hover .more-badge{
+    background:rgba(0,0,0,.55);
+  }
+  .snap .gallery-hint{color:rgba(232,201,154,.7)}
   /* ---------- closing ---------- */
   .closing{
     text-align:center;
@@ -1160,10 +1225,41 @@
 
 <!-- ============== 8. SNAP PHOTOS ============== -->
 <section class="snap reveal">
-  <div class="eyebrow">A LITTLE SHOWCASE</div>
-  <div class="script-acc">Wedding Snap</div>
-  <h2 class="serif">결혼 스냅 사진,<br>함께 보실까요?</h2>
-  <p>지난 주말 촬영했던 사진들이에요.<br>여기서부터는 직접 보여드릴게요.</p>
+  <div class="snap-inner">
+    <div class="eyebrow">A LITTLE SHOWCASE</div>
+    <div class="script-acc">Wedding Snap</div>
+    <h2 class="serif">결혼 스냅 사진,<br>함께 보실까요?</h2>
+    <p class="lede-dark">지난주에 촬영한 사진들이에요.<br>마음에 드는 컷들 모아봤습니다.</p>
+
+    <div class="snap-gallery" id="snapGallery">
+      <div class="photo wide" data-index="1">
+        <img src="snap1.jpg" alt="결혼 스냅 1" onerror="this.style.display='none'">
+        <div class="ph-fallback">snap1.jpg</div>
+        <div class="more-badge"><span class="plus">+0</span><span class="label">More</span></div>
+      </div>
+      <div class="photo" data-index="2">
+        <img src="snap2.jpg" alt="결혼 스냅 2" onerror="this.style.display='none'">
+        <div class="ph-fallback">snap2.jpg</div>
+        <div class="more-badge"><span class="plus">+0</span><span class="label">More</span></div>
+      </div>
+      <div class="photo" data-index="3">
+        <img src="snap3.jpg" alt="결혼 스냅 3" onerror="this.style.display='none'">
+        <div class="ph-fallback">snap3.jpg</div>
+        <div class="more-badge"><span class="plus">+0</span><span class="label">More</span></div>
+      </div>
+      <div class="photo" data-index="4">
+        <img src="snap4.jpg" alt="결혼 스냅 4" onerror="this.style.display='none'">
+        <div class="ph-fallback">snap4.jpg</div>
+        <div class="more-badge"><span class="plus">+0</span><span class="label">More</span></div>
+      </div>
+      <div class="photo" data-index="5">
+        <img src="snap5.jpg" alt="결혼 스냅 5" onerror="this.style.display='none'">
+        <div class="ph-fallback">snap5.jpg</div>
+        <div class="more-badge"><span class="plus">+0</span><span class="label">More</span></div>
+      </div>
+    </div>
+    <div class="gallery-hint hidden" id="snapHint">TAP A PHOTO TO VIEW MORE · 사진을 누르면 전부 볼 수 있어요</div>
+  </div>
 </section>
 
 <!-- ============== 9. CLOSING ============== -->
@@ -1215,88 +1311,40 @@
   }, {threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  /* ---------- Photo gallery + Lightbox ---------- */
-  // Probes home1.jpg ~ home20.jpg, builds a sorted list of photos that actually exist,
-  // then wires up the grid and lightbox.
+  /* ---------- Photo galleries + Lightbox ---------- */
+  // Each gallery probes its own filename prefix (home1.jpg…, snap1.jpg…),
+  // builds a list of photos that exist, and clicking any thumb opens the
+  // shared lightbox seeded with that gallery's photo array.
   (function(){
-    const MAX_PHOTOS = 20;
-    const VISIBLE = 5;       // thumbs in grid
-    const photos = [];        // existing photo URLs in order
-    let current = 0;          // active index in lightbox
 
-    function probe(src){
-      return new Promise(resolve=>{
-        const img = new Image();
-        img.onload  = ()=>resolve(src);
-        img.onerror = ()=>resolve(null);
-        img.src = src;
-      });
-    }
-
-    async function buildGallery(){
-      const checks = [];
-      for(let i=1; i<=MAX_PHOTOS; i++) checks.push(probe('home'+i+'.jpg'));
-      const results = await Promise.all(checks);
-      results.forEach(s=>{ if(s) photos.push(s); });
-
-      const galleryEl = document.getElementById('homeGallery');
-      const hintEl   = document.getElementById('galleryHint');
-      const thumbs   = galleryEl.querySelectorAll('.photo');
-      const total    = photos.length;
-
-      // total counter in lightbox
-      document.getElementById('lbTotal').textContent = total;
-
-      // wire grid: each visible thumb opens lightbox at its own photo
-      thumbs.forEach((thumb, i)=>{
-        if(i < total){
-          thumb.style.cursor = 'pointer';
-          thumb.addEventListener('click', ()=>openLightbox(i));
-        } else {
-          thumb.style.cursor = 'default';
-        }
-      });
-
-      // "+N more" badge on the last visible thumb
-      if(total > VISIBLE){
-        const extra = total - VISIBLE;
-        const last = thumbs[VISIBLE - 1];
-        last.classList.add('has-more');
-        last.querySelector('.more-badge .plus').textContent = '+'+extra;
-        if(hintEl) hintEl.classList.remove('hidden');
-      } else if (total > 1) {
-        // a few photos but no overflow — still show a small hint
-        if(hintEl){
-          hintEl.textContent = 'TAP TO ENLARGE · 사진을 누르면 크게 볼 수 있어요';
-          hintEl.classList.remove('hidden');
-        }
-      }
-    }
-
-    /* ---- Lightbox ---- */
+ /* ---- shared lightbox ---- */
     const lb       = document.getElementById('lightbox');
     const lbImg    = document.getElementById('lbImg');
     const lbIndex  = document.getElementById('lbIndex');
+    const lbTotal  = document.getElementById('lbTotal');
     const lbPrev   = document.getElementById('lbPrev');
     const lbNext   = document.getElementById('lbNext');
     const lbClose  = document.getElementById('lbClose');
     const lbWrap   = document.getElementById('lbImgWrap');
 
+    let activePhotos = [];
+    let current = 0;
+
     function show(i){
-      if(!photos.length) return;
-      current = (i + photos.length) % photos.length;
+      if(!activePhotos.length) return;
+      current = (i + activePhotos.length) % activePhotos.length;
       lbImg.classList.add('swap');
-      // tiny delay so the fade is visible
       setTimeout(()=>{
-        lbImg.src = photos[current];
-        lbImg.alt = '신혼집 사진 ' + (current+1);
+        lbImg.src = activePhotos[current];
+        lbImg.alt = '사진 ' + (current+1);
         lbIndex.textContent = current + 1;
         lbImg.classList.remove('swap');
       }, 120);
     }
-
-    function openLightbox(i){
+    function openLightbox(photos, i){
       if(!photos.length) return;
+      activePhotos = photos;
+      lbTotal.textContent = photos.length;
       lb.classList.add('open');
       document.body.classList.add('lb-locked');
       show(i);
@@ -1311,15 +1359,11 @@
     lbNext.addEventListener('click', next);
     lbPrev.addEventListener('click', prev);
     lbClose.addEventListener('click', closeLightbox);
-
-    // click outside the image closes
     lb.addEventListener('click', (e)=>{
       if(e.target === lb || e.target.classList.contains('lb-stage') || e.target === lbWrap){
         closeLightbox();
       }
     });
-
-    // keyboard
     document.addEventListener('keydown', (e)=>{
       if(!lb.classList.contains('open')) return;
       if(e.key === 'ArrowRight') next();
@@ -1344,8 +1388,56 @@
       }
     });
 
-    // boot
-    buildGallery();
+    /* ---- gallery factory ---- */
+    function probe(src){
+      return new Promise(resolve=>{
+        const img = new Image();
+        img.onload  = ()=>resolve(src);
+        img.onerror = ()=>resolve(null);
+        img.src = src;
+      });
+    }
+
+    async function initGallery({ galleryId, hintId, prefix, max=20, visible=5 }){
+      const gallery = document.getElementById(galleryId);
+      const hint    = document.getElementById(hintId);
+      if(!gallery) return;
+
+      const checks = [];
+      for(let i=1; i<=max; i++) checks.push(probe(prefix + i + '.jpg'));
+      const results = await Promise.all(checks);
+      const photos  = results.filter(Boolean);
+      const total   = photos.length;
+
+      const thumbs = gallery.querySelectorAll('.photo');
+
+      thumbs.forEach((thumb, i)=>{
+        if(i < total){
+          thumb.style.cursor = 'pointer';
+          thumb.addEventListener('click', ()=>openLightbox(photos, i));
+        } else {
+          thumb.style.cursor = 'default';
+        }
+      });
+
+      // "+N more" badge on the last visible thumb
+      if(total > visible){
+        const extra = total - visible;
+        const last  = thumbs[visible - 1];
+        last.classList.add('has-more');
+        last.querySelector('.more-badge .plus').textContent = '+'+extra;
+        if(hint) hint.classList.remove('hidden');
+      } else if (total > 1) {
+        if(hint){
+          hint.textContent = 'TAP TO ENLARGE · 사진을 누르면 크게 볼 수 있어요';
+          hint.classList.remove('hidden');
+        }
+      }
+    }
+
+    // boot — one gallery per section
+    initGallery({ galleryId:'homeGallery', hintId:'galleryHint', prefix:'home', max:20, visible:5 });
+    initGallery({ galleryId:'snapGallery', hintId:'snapHint',    prefix:'snap', max:30, visible:5 });
   })();
 </script>
 </body>
