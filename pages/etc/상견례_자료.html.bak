@@ -1,0 +1,1352 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>민형 · 유민 — 상견례</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Serif+KR:wght@300;400;500;600;700&family=Pretendard:wght@300;400;500;600;700&family=Italianno&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FAF6F0;
+    --paper:#FFFFFF;
+    --cream:#F2E8D8;
+    --wine:#6B2C39;
+    --wine-mid:#8B3A47;
+    --champagne:#B8945F;
+    --sage:#8FA37E;
+    --ink:#2D2419;
+    --ink-soft:#5A4D3F;
+    --muted:#9A8D7E;
+    --line:#E5DBC9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Pretendard','Noto Serif KR','Apple SD Gothic Neo',sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .serif{font-family:'Noto Serif KR','Gowun Batang',serif;}
+  .script{font-family:'Italianno',cursive;}
+  .latin{font-family:'Cormorant Garamond',serif;}
+
+  /* ---------- shared ---------- */
+  section{
+    padding:96px 28px 110px;
+    position:relative;
+    max-width:760px;
+    margin:0 auto;
+  }
+  @media (max-width:520px){ section{padding:72px 22px 88px} }
+
+  .eyebrow{
+    font-family:'Cormorant Garamond',serif;
+    letter-spacing:.42em;
+    font-size:11px;
+    color:var(--champagne);
+    text-transform:uppercase;
+    font-weight:500;
+    margin-bottom:18px;
+  }
+  .eyebrow .num{
+    color:var(--wine);
+    font-style:italic;
+    font-weight:600;
+    margin-right:10px;
+  }
+  h1,h2,h3{font-family:'Noto Serif KR',serif;font-weight:500;letter-spacing:-0.01em;}
+  h2{
+    font-size:30px;
+    line-height:1.35;
+    color:var(--ink);
+    margin-bottom:14px;
+  }
+  @media (min-width:600px){ h2{font-size:36px} }
+  .lede{
+    color:var(--ink-soft);
+    font-size:15.5px;
+    margin-bottom:36px;
+    max-width:560px;
+  }
+  .ornament{
+    display:flex;align-items:center;gap:14px;
+    color:var(--champagne);
+    font-size:18px;
+    margin:8px 0 32px;
+  }
+  .ornament::before,.ornament::after{
+    content:"";flex:1;height:1px;background:var(--line);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;
+    background:
+      radial-gradient(ellipse at 20% 10%, #fff8ec 0%, transparent 55%),
+      radial-gradient(ellipse at 90% 90%, #f0e3d0 0%, transparent 55%),
+      var(--ivory);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 24px;
+    overflow:hidden;
+    position:relative;
+    max-width:none;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:24px;
+    border:1px solid var(--line);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:2;animation:fadeUp 1s ease both}
+  .hero .latin-tag{
+    font-family:'Cormorant Garamond',serif;
+    letter-spacing:.5em;
+    font-size:12px;
+    color:var(--champagne);
+    margin-bottom:30px;
+  }
+  .hero .names{
+    font-family:'Italianno',cursive;
+    font-size:clamp(64px, 14vw, 120px);
+    line-height:1;
+    color:var(--wine);
+    margin-bottom:6px;
+  }
+  .hero .ko-names{
+    font-family:'Noto Serif KR',serif;
+    font-weight:400;
+    letter-spacing:.5em;
+    font-size:14px;
+    color:var(--ink-soft);
+    padding-left:.5em;
+    margin-bottom:34px;
+  }
+  .hero .divider{
+    width:60px;height:1px;background:var(--champagne);
+    margin:0 auto 32px;
+  }
+  .hero .date{
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;
+    color:var(--ink);
+    letter-spacing:.18em;
+    font-weight:500;
+    margin-bottom:6px;
+  }
+  .hero .date small{
+    display:block;
+    font-family:'Noto Serif KR',serif;
+    font-size:12px;
+    letter-spacing:.4em;
+    color:var(--muted);
+    margin-top:8px;
+  }
+  .dday{
+    margin-top:48px;
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+    padding:18px 36px;
+    background:var(--wine);
+    color:#FAF6F0;
+    border-radius:2px;
+    box-shadow:0 14px 40px -16px rgba(107,44,57,.55);
+  }
+  .dday .label{
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.5em;
+    color:#E8C99A;
+    text-transform:uppercase;
+  }
+  .dday .num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:38px;
+    font-weight:500;
+    letter-spacing:.05em;
+  }
+  .scroll-hint{
+    position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.5em;
+    color:var(--muted);
+    opacity:.8;
+    animation:bob 2.4s ease-in-out infinite;
+  }
+  @keyframes bob{50%{transform:translate(-50%,6px)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1}}
+
+  /* ---------- INTRO greeting ---------- */
+  .greeting{
+    text-align:center;
+    background:var(--paper);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    max-width:none;
+    padding:90px 28px;
+  }
+  .greeting blockquote{
+    font-family:'Noto Serif KR',serif;
+    font-weight:300;
+    font-size:21px;
+    line-height:1.85;
+    color:var(--ink);
+    max-width:540px;
+    margin:0 auto;
+  }
+  .greeting blockquote span{color:var(--wine);font-weight:500}
+
+  /* ---------- status cards ---------- */
+  .status-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  @media (max-width:520px){.status-grid{grid-template-columns:1fr}}
+  .stat{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:24px 22px;
+    position:relative;
+  }
+  .stat .ico{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:34px;
+    color:var(--champagne);
+    line-height:1;
+    margin-bottom:14px;
+    display:block;
+  }
+  .stat h3{
+    font-size:17px;
+    margin-bottom:6px;
+    color:var(--wine);
+  }
+  .stat p{
+    font-size:14px;
+    color:var(--ink-soft);
+    line-height:1.6;
+  }
+
+  /* ---------- checklist ---------- */
+  .check-cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  @media (max-width:520px){.check-cols{grid-template-columns:1fr;gap:18px}}
+  .check-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:24px 22px 26px;
+  }
+  .check-card.done{border-top:3px solid var(--sage);}
+  .check-card.todo{border-top:3px solid var(--champagne);}
+  .check-card h3{
+    font-size:13px;
+    letter-spacing:.3em;
+    margin-bottom:18px;
+    text-transform:uppercase;
+  }
+  .check-card.done h3{color:var(--sage)}
+  .check-card.todo h3{color:var(--champagne)}
+  .check-card ul{list-style:none}
+  .check-card li{
+    padding:9px 0 9px 28px;
+    position:relative;
+    font-size:15px;
+    color:var(--ink);
+    border-bottom:1px dashed var(--line);
+  }
+  .check-card li:last-child{border-bottom:none}
+  .check-card.done li::before{
+    content:"✓";
+    position:absolute;left:6px;top:9px;
+    color:var(--sage);font-weight:700;
+  }
+  .check-card.todo li::before{
+    content:"○";
+    position:absolute;left:6px;top:9px;
+    color:var(--champagne);font-weight:600;
+  }
+  .check-card .sub{
+    font-size:12.5px;color:var(--muted);
+    margin-left:4px;
+  }
+
+  /* ---------- home ---------- */
+  .home-card{
+    background:linear-gradient(180deg,#fff 0%,#FAF1E0 100%);
+    border:1px solid var(--line);
+    padding:40px 30px;
+    text-align:center;
+    position:relative;
+  }
+  .home-gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin:28px 0 8px;
+  }
+  .home-gallery .photo{
+    aspect-ratio:4/3;
+    overflow:hidden;
+    background:var(--cream);
+    border:1px solid var(--line);
+    position:relative;
+    cursor:pointer;
+  }
+  .home-gallery .photo.tall{aspect-ratio:3/4}
+  .home-gallery .photo.wide{grid-column:span 2;aspect-ratio:16/10}
+  .home-gallery .photo img{
+    width:100%;height:100%;object-fit:cover;
+    display:block;
+    transition:transform .6s ease, filter .3s ease;
+  }
+  .home-gallery .photo:hover img{transform:scale(1.04)}
+  .home-gallery .photo .ph-fallback{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--muted);
+    letter-spacing:.15em;
+    text-align:center;
+    padding:0 14px;
+  }
+  .home-gallery .photo img:not([src=""]) + .ph-fallback{display:none}
+
+  /* "+N more" overlay on the last visible thumbnail */
+  .home-gallery .photo .more-badge{
+    position:absolute;inset:0;
+    background:rgba(45,36,25,.55);
+    color:#FAF6F0;
+    display:flex;align-items:center;justify-content:center;
+    flex-direction:column;
+    gap:4px;
+    font-family:'Cormorant Garamond',serif;
+    pointer-events:none;
+    opacity:0;
+    transition:opacity .3s ease;
+  }
+  .home-gallery .photo.has-more .more-badge{opacity:1}
+  .home-gallery .photo .more-badge .plus{
+    font-size:34px;font-weight:500;line-height:1;
+    letter-spacing:.02em;
+  }
+  .home-gallery .photo .more-badge .label{
+    font-size:11px;letter-spacing:.4em;
+    color:#E8C99A;
+  }
+  .home-gallery .photo:hover .more-badge{
+    background:rgba(107,44,57,.65);
+  }
+
+  /* hint text below gallery */
+  .gallery-hint{
+    text-align:center;
+    margin-top:14px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;
+    letter-spacing:.3em;
+    color:var(--muted);
+    text-transform:uppercase;
+  }
+  .gallery-hint.hidden{display:none}
+
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox{
+    position:fixed;inset:0;z-index:9999;
+    background:rgba(25,18,12,.97);
+    display:none;
+    flex-direction:column;
+    animation:lbFade .3s ease;
+  }
+  .lightbox.open{display:flex}
+  @keyframes lbFade{from{opacity:0}to{opacity:1}}
+
+  .lb-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 22px;
+    color:#E8C99A;
+    flex-shrink:0;
+  }
+  .lb-counter{
+    font-family:'Cormorant Garamond',serif;
+    font-size:15px;
+    letter-spacing:.3em;
+  }
+  .lb-counter .sep{margin:0 6px;opacity:.6}
+  .lb-close{
+    background:none;border:none;
+    color:#E8C99A;
+    font-size:32px;
+    line-height:1;
+    cursor:pointer;
+    width:44px;height:44px;
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .2s ease, color .2s ease;
+  }
+  .lb-close:hover{color:#fff;transform:rotate(90deg)}
+
+  .lb-stage{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+    padding:0 12px 32px;
+    user-select:none;
+  }
+  .lb-img-wrap{
+    width:100%;height:100%;
+    display:flex;align-items:center;justify-content:center;
+    touch-action:pan-y;
+  }
+  .lb-img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+    display:block;
+    transition:opacity .25s ease;
+    box-shadow:0 30px 80px -20px rgba(0,0,0,.6);
+  }
+  .lb-img.swap{opacity:0}
+
+  .lb-nav{
+    position:absolute;
+    top:50%;transform:translateY(-50%);
+    background:rgba(232,201,154,.12);
+    border:1px solid rgba(232,201,154,.3);
+    color:#E8C99A;
+    width:48px;height:48px;
+    border-radius:50%;
+    font-family:'Cormorant Garamond',serif;
+    font-size:28px;
+    line-height:1;
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:all .2s ease;
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+  }
+  .lb-nav:hover{
+    background:rgba(232,201,154,.25);
+    color:#fff;
+    border-color:rgba(232,201,154,.6);
+  }
+  .lb-prev{left:14px}
+  .lb-next{right:14px}
+  @media (max-width:520px){
+    .lb-nav{width:42px;height:42px;font-size:22px}
+    .lb-prev{left:8px}
+    .lb-next{right:8px}
+  }
+
+  .lb-caption{
+    position:absolute;
+    bottom:8px;
+    left:0;right:0;
+    text-align:center;
+    color:rgba(232,201,154,.7);
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;
+    letter-spacing:.4em;
+    text-transform:uppercase;
+    pointer-events:none;
+  }
+
+  body.lb-locked{overflow:hidden}
+  .home-card .place{
+    font-family:'Cormorant Garamond',serif;
+    font-size:42px;
+    color:var(--wine);
+    letter-spacing:.06em;
+    margin-bottom:4px;
+    font-weight:500;
+  }
+  .home-card .ko{
+    font-family:'Noto Serif KR',serif;
+    font-size:13px;
+    letter-spacing:.5em;
+    color:var(--ink-soft);
+    margin-bottom:24px;
+    padding-left:.5em;
+  }
+  .home-features{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:18px 0 24px;
+  }
+  .chip{
+    border:1px solid var(--champagne);
+    color:var(--wine);
+    background:var(--paper);
+    padding:7px 16px;
+    font-size:13px;
+    border-radius:999px;
+    letter-spacing:.04em;
+  }
+  .invite{
+    margin-top:24px;
+    padding-top:24px;
+    border-top:1px dashed var(--line);
+    font-family:'Noto Serif KR',serif;
+    font-size:18px;
+    color:var(--wine);
+    line-height:1.7;
+  }
+  .invite small{
+    display:block;
+    font-family:'Pretendard',sans-serif;
+    font-size:13px;
+    color:var(--muted);
+    margin-top:8px;
+    letter-spacing:0;
+  }
+
+  /* ---------- honeymoon route ---------- */
+  .route{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:30px 24px;
+    text-align:center;
+  }
+  .route .sub{
+    font-family:'Cormorant Garamond',serif;
+    font-size:14px;
+    letter-spacing:.4em;
+    color:var(--champagne);
+    margin-bottom:8px;
+  }
+  .route h3{
+    font-size:22px;
+    margin-bottom:6px;
+    color:var(--wine);
+  }
+  .route .duration{
+    font-size:13px;color:var(--muted);
+    letter-spacing:.2em;
+    margin-bottom:24px;
+  }
+  .route-flow{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:6px 4px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:14px;
+    color:var(--ink);
+    letter-spacing:.06em;
+  }
+  .route-flow .stop{
+    padding:6px 12px;
+    background:var(--cream);
+    border-radius:2px;
+    color:var(--wine);
+    font-weight:500;
+  }
+  .route-flow .arr{color:var(--champagne);font-style:italic}
+
+  /* ---------- calendar ---------- */
+  .cal{
+    background:var(--paper);
+    border:1px solid var(--line);
+    overflow:hidden;
+  }
+  .cal-head{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    border-bottom:1px solid var(--line);
+    background:var(--cream);
+  }
+  .cal-head div{
+    text-align:center;
+    padding:10px 0;
+    font-size:12px;
+    letter-spacing:.3em;
+    color:var(--ink-soft);
+    font-family:'Noto Serif KR',serif;
+  }
+  .cal-head .sun{color:var(--wine)}
+  .cal-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+  }
+  .day{
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    min-height:78px;
+    padding:6px 6px 8px;
+    font-size:11px;
+    color:var(--ink);
+    line-height:1.45;
+    position:relative;
+  }
+  .day:nth-child(7n){border-right:none}
+  .day .dn{
+    font-family:'Cormorant Garamond',serif;
+    font-size:14px;
+    font-weight:500;
+    color:var(--ink-soft);
+    margin-bottom:2px;
+  }
+  .day.empty{background:#FBF7EF}
+  .day.wedding{
+    background:linear-gradient(135deg,#6B2C39 0%, #8B3A47 100%);
+    color:#fff;
+  }
+  .day.wedding .dn{color:#E8C99A}
+  .day.wedding .badge{
+    font-family:'Italianno',cursive;
+    font-size:18px;color:#E8C99A;
+  }
+  .day.flight{background:#F1E9D9}
+  .day.paris{background:#FBF1E2}
+  .day.venice{background:#EFE7D5}
+  .day.dolo{background:#E7EBDF}
+  .day.spa{background:#F4E8DA}
+  .day.return{background:#F4E0D8}
+  .day .tag{
+    font-size:10px;
+    color:var(--wine);
+    font-weight:500;
+    line-height:1.35;
+    word-break:keep-all;
+  }
+  .day .time{
+    font-size:9.5px;
+    color:var(--ink-soft);
+    margin-top:2px;
+    font-family:'Cormorant Garamond',serif;
+    letter-spacing:.05em;
+  }
+  .cal-legend{
+    display:flex;flex-wrap:wrap;gap:8px;
+    margin-top:14px;font-size:11px;
+    color:var(--ink-soft);
+  }
+  .cal-legend span{
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .cal-legend .dot{
+    width:10px;height:10px;border:1px solid var(--line);
+  }
+
+  /* ---------- flight table ---------- */
+  .flight-list{display:grid;gap:14px}
+  .flight{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--wine);
+    padding:18px 20px;
+  }
+  .flight-top{
+    display:flex;justify-content:space-between;
+    align-items:baseline;flex-wrap:wrap;gap:8px;
+    margin-bottom:10px;
+  }
+  .flight-route{
+    font-family:'Noto Serif KR',serif;
+    font-weight:500;
+    color:var(--wine);
+    font-size:16px;
+  }
+  .flight-route .arr{color:var(--champagne);margin:0 6px}
+  .flight-num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:14px;color:var(--ink-soft);
+    letter-spacing:.15em;
+  }
+  .flight-detail{
+    display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;
+    font-size:13px;color:var(--ink-soft);
+  }
+  @media (max-width:480px){.flight-detail{grid-template-columns:1fr}}
+  .flight-detail strong{
+    color:var(--ink);font-weight:500;
+    font-family:'Cormorant Garamond',serif;
+    font-size:14px;letter-spacing:.05em;
+  }
+
+  /* ---------- hotels ---------- */
+  .hotel-list{display:grid;gap:12px}
+  .hotel{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:16px 20px;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    gap:14px;
+    align-items:center;
+  }
+  .hotel-num{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:26px;
+    color:var(--champagne);
+    line-height:1;
+    min-width:36px;
+  }
+  .hotel-info h4{
+    font-family:'Noto Serif KR',serif;
+    font-weight:500;
+    font-size:15.5px;
+    color:var(--ink);
+    margin-bottom:3px;
+  }
+  .hotel-info .meta{
+    font-size:12px;color:var(--muted);
+    font-family:'Cormorant Garamond',serif;
+    letter-spacing:.1em;
+  }
+  .hotel-nights{
+    font-family:'Cormorant Garamond',serif;
+    font-size:13px;
+    color:var(--wine);
+    background:var(--cream);
+    padding:5px 12px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+
+  /* ---------- snap photos ---------- */
+  .snap{
+    text-align:center;
+    background:var(--wine);
+    color:#fff;
+    max-width:none;
+    padding:90px 28px;
+    position:relative;
+    overflow:hidden;
+  }
+  .snap::before{
+    content:"";
+    position:absolute;inset:24px;
+    border:1px solid rgba(232,201,154,.35);
+    pointer-events:none;
+  }
+  .snap .eyebrow{color:#E8C99A;position:relative;z-index:1}
+  .snap h2{color:#fff;position:relative;z-index:1;margin-bottom:18px}
+  .snap p{
+    color:#F0DFC0;
+    font-size:15px;
+    max-width:420px;
+    margin:0 auto;
+    position:relative;z-index:1;
+  }
+  .snap .script-acc{
+    font-family:'Italianno',cursive;
+    font-size:60px;
+    color:#E8C99A;
+    margin:8px 0 16px;
+    line-height:1;
+  }
+
+  /* ---------- closing ---------- */
+  .closing{
+    text-align:center;
+    padding:110px 28px 130px;
+    background:var(--paper);
+    border-top:1px solid var(--line);
+    max-width:none;
+  }
+  .closing .latin-tag{
+    font-family:'Cormorant Garamond',serif;
+    letter-spacing:.4em;
+    font-size:12px;
+    color:var(--champagne);
+    margin-bottom:24px;
+  }
+  .closing .msg{
+    font-family:'Noto Serif KR',serif;
+    font-weight:300;
+    font-size:22px;
+    line-height:1.9;
+    color:var(--ink);
+    max-width:480px;
+    margin:0 auto 36px;
+  }
+  .closing .signature{
+    font-family:'Italianno',cursive;
+    font-size:46px;
+    color:var(--wine);
+  }
+  .closing .ko-sig{
+    font-family:'Noto Serif KR',serif;
+    font-size:14px;
+    letter-spacing:.5em;
+    color:var(--ink-soft);
+    margin-top:6px;
+    padding-left:.5em;
+  }
+  footer{
+    text-align:center;
+    padding:30px 20px 40px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;
+    letter-spacing:.4em;
+    color:var(--muted);
+    background:var(--ivory);
+  }
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="latin-tag">OUR WEDDING STORY</div>
+    <div class="names">Minhyeong &amp; Yumin</div>
+    <div class="ko-names">민형 · 유민</div>
+    <div class="divider"></div>
+    <div class="date">2026 · 07 · 04
+      <small>SATURDAY</small>
+    </div>
+    <div class="dday" id="dday">
+      <span class="label">D &minus; DAY</span>
+      <span class="num" id="ddayNum">D&minus;63</span>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL ↓</div>
+</section>
+
+<!-- ============== GREETING ============== -->
+<section class="greeting">
+  <blockquote class="reveal">
+    오늘 좋은 자리를 마련해주셔서<br>
+    진심으로 감사드립니다.<br><br>
+    저희 두 사람이<br>
+    <span>지금까지 어떻게 준비해왔는지</span><br>
+    잠깐 보여드리고 싶어<br>
+    이 자리를 빌려 정리해보았습니다.
+  </blockquote>
+</section>
+
+<!-- ============== 1. STATUS ============== -->
+<section class="reveal">
+  <div class="eyebrow"><span class="num">01</span>OUR LIFE NOW</div>
+  <h2 class="serif">저희 둘은 <br>이렇게 지내고 있어요</h2>
+  <div class="ornament">·</div>
+
+  <div class="status-grid">
+    <div class="stat">
+      <span class="ico">i.</span>
+      <h3>집꾸미기</h3>
+      <p>하나씩 들어오는 가전,<br>가구들을 배치하고 정리하면서<br>퇴근 후 일상을 보내고 있어요.</p>
+    </div>
+    <div class="stat">
+      <span class="ico">ii.</span>
+      <h3>결혼 준비</h3>
+      <p>큰 일들은 거의 다 마쳤어요.<br>마무리만 남았습니다.</p>
+    </div>
+    <div class="stat">
+      <span class="ico">iii.</span>
+      <h3>신혼 여행 준비</h3>
+      <p>매달 빠짐없이 성실히<br>갚아나가고 있어요.</p>
+    </div>
+    <div class="stat">
+      <span class="ico">iv.</span>
+      <h3>신혼 시작</h3>
+      <p>신혼집 주변으로 산책도 다니면서<br>맛집 알아보러 다니고 있어요.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 2. CHECKLIST ============== -->
+<section class="reveal">
+  <div class="eyebrow"><span class="num">02</span>WEDDING CHECKLIST</div>
+  <h2 class="serif">결혼 준비 체크리스트</h2>
+  <p class="lede">큰 일정들은 거의 마무리됐고, 이제 가족과 함께 마지막 준비만 남겨두고 있어요.</p>
+
+  <div class="check-cols">
+    <div class="check-card done">
+      <h3>완 료</h3>
+      <ul>
+        <li>식장 예약</li>
+        <li>결혼 스냅 사진 촬영</li>
+        <li>신혼여행 항공권 · 숙소 · 렌트카</li>
+        <li>신혼집 인테리어</li>
+        <li>가전 — 냉장고, 세탁기 <span class="sub">(우선 구비)</span></li>
+      </ul>
+    </div>
+    <div class="check-card todo">
+      <h3>남 은 일</h3>
+      <ul>
+        <li>부모님 한복</li>
+        <li>결혼식 본식 사진/영상 예약</li>
+        <li>가전·가구 구매 및 이사 짐 정리</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 3. HOME ============== -->
+<section class="reveal">
+  <div class="eyebrow"><span class="num">03</span>OUR NEW HOME</div>
+  <h2 class="serif">저희 신혼집,<br>예쁘게 꾸며놨어요</h2>
+  <p class="lede">두 사람이 마음 모아 한 땀 한 땀 골라가며 꾸민 집입니다. 진짜 고생 많이 했어요.</p>
+
+  <div class="home-card">
+    <div class="place">DONGTAN</div>
+    <div class="ko">동 탄</div>
+    <div class="home-features">
+      <span class="chip">인테리어 완료</span>
+      <span class="chip">냉장고 · 세탁기 구비</span>
+      <span class="chip">두 사람의 첫 보금자리</span>
+    </div>
+
+    <div class="home-gallery" id="homeGallery">
+      <div class="photo wide" data-index="1">
+        <img src="home1.jpg" alt="신혼집 사진 1" onerror="this.style.display='none'">
+        <div class="ph-fallback">home1.jpg</div>
+        <div class="more-badge"><span class="plus">+0</span><span class="label">More</span></div>
+      </div>
+      <div class="photo" data-index="2">
+        <img src="home2.jpg" alt="신혼집 사진 2" onerror="this.style.display='none'">
+        <div class="ph-fallback">home2.jpg</div>
+        <div class="more-badge"><span class="plus">+0</span><span class="label">More</span></div>
+      </div>
+      <div class="photo" data-index="3">
+        <img src="home3.jpg" alt="신혼집 사진 3" onerror="this.style.display='none'">
+        <div class="ph-fallback">home3.jpg</div>
+        <div class="more-badge"><span class="plus">+0</span><span class="label">More</span></div>
+      </div>
+      <div class="photo" data-index="4">
+        <img src="home4.jpg" alt="신혼집 사진 4" onerror="this.style.display='none'">
+        <div class="ph-fallback">home4.jpg</div>
+        <div class="more-badge"><span class="plus">+0</span><span class="label">More</span></div>
+      </div>
+      <div class="photo" data-index="5">
+        <img src="home5.jpg" alt="신혼집 사진 5" onerror="this.style.display='none'">
+        <div class="ph-fallback">home5.jpg</div>
+        <div class="more-badge"><span class="plus">+0</span><span class="label">More</span></div>
+      </div>
+    </div>
+    <div class="gallery-hint hidden" id="galleryHint">TAP A PHOTO TO VIEW MORE · 사진을 누르면 전부 볼 수 있어요</div>
+
+    <div class="invite">
+      “언제 한번 꼭 놀러오세요.”<br>
+      <small>이쁘게 잘 꾸며놨으니 차 한잔 대접하고 싶어요.</small>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 4. HONEYMOON INTRO ============== -->
+<section class="reveal">
+  <div class="eyebrow"><span class="num">04</span>HONEYMOON</div>
+  <h2 class="serif">신혼여행은<br>이렇게 다녀올게요</h2>
+
+  <div class="route">
+    <div class="sub">FRANCE · ITALY</div>
+    <h3>파리 · 베니스 · 돌로미티</h3>
+    <div class="duration">2026.07.05 — 07.18  ·  13박 14일</div>
+    <div class="route-flow">
+      <span class="stop">인천</span><span class="arr">→</span>
+      <span class="stop">파리</span><span class="arr">→</span>
+      <span class="stop">베니스</span><span class="arr">→</span>
+      <span class="stop">돌로미티</span><span class="arr">→</span>
+      <span class="stop">파리</span><span class="arr">→</span>
+      <span class="stop">인천</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 5. CALENDAR ============== -->
+<section class="reveal">
+  <div class="eyebrow"><span class="num">05</span>JULY · 2026</div>
+  <h2 class="serif">2026년 7월 일정표</h2>
+  <p class="lede">결혼식 D-DAY부터 신혼여행 복귀까지의 흐름입니다.</p>
+
+  <div class="cal">
+    <div class="cal-head">
+      <div class="sun">일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div>
+    </div>
+    <div class="cal-grid">
+      <!-- week 1 -->
+      <div class="day empty"></div>
+      <div class="day empty"></div>
+      <div class="day empty"></div>
+      <div class="day"><div class="dn">1</div></div>
+      <div class="day"><div class="dn">2</div></div>
+      <div class="day"><div class="dn">3</div></div>
+      <div class="day wedding">
+        <div class="dn">4</div>
+        <div class="badge">Wedding</div>
+        <div class="tag" style="color:#fff">결혼식 D-DAY</div>
+      </div>
+
+      <!-- week 2 -->
+      <div class="day flight">
+        <div class="dn">5</div>
+        <div class="tag">인천 → 파리 출발</div>
+        <div class="time">10:05–17:20</div>
+      </div>
+      <div class="day paris"><div class="dn">6</div><div class="tag">파리</div></div>
+      <div class="day paris"><div class="dn">7</div><div class="tag">파리</div></div>
+      <div class="day flight">
+        <div class="dn">8</div>
+        <div class="tag">파리 → 베니스</div>
+        <div class="time">18:40–20:15</div>
+      </div>
+      <div class="day flight">
+        <div class="dn">9</div>
+        <div class="tag">베니스 → 돌로미티</div>
+        <div class="time">렌트카 이동</div>
+      </div>
+      <div class="day dolo"><div class="dn">10</div><div class="tag">돌로미티</div></div>
+      <div class="day dolo"><div class="dn">11</div><div class="tag">돌로미티</div></div>
+
+      <!-- week 3 -->
+      <div class="day spa"><div class="dn">12</div><div class="tag">돌로미티</div><div class="time">스파 호텔</div></div>
+      <div class="day dolo"><div class="dn">13</div><div class="tag">돌로미티</div></div>
+      <div class="day dolo"><div class="dn">14</div><div class="tag">돌로미티</div></div>
+      <div class="day dolo"><div class="dn">15</div><div class="tag">돌로미티</div></div>
+      <div class="day flight">
+        <div class="dn">16</div>
+        <div class="tag">돌로미티 → 파리</div>
+        <div class="time">21:10–23:00</div>
+      </div>
+      <div class="day return"><div class="dn">17</div><div class="tag">파리 → 인천</div><div class="time">19:10 출발</div></div>
+      <div class="day return"><div class="dn">18</div><div class="tag">인천 도착</div><div class="time">14:10 (+1)</div></div>
+    </div>
+  </div>
+
+  <div class="cal-legend">
+    <span><i class="dot" style="background:#F1E9D9"></i>이동</span>
+    <span><i class="dot" style="background:#FBF1E2"></i>파리</span>
+    <span><i class="dot" style="background:#EFE7D5"></i>베니스</span>
+    <span><i class="dot" style="background:#E7EBDF"></i>돌로미티</span>
+    <span><i class="dot" style="background:#F4E8DA"></i>스파 호텔</span>
+    <span><i class="dot" style="background:#F4E0D8"></i>귀국</span>
+  </div>
+</section>
+
+<!-- ============== 6. FLIGHTS ============== -->
+<section class="reveal">
+  <div class="eyebrow"><span class="num">06</span>FLIGHTS</div>
+  <h2 class="serif">항공편 안내</h2>
+  <p class="lede">총 4편의 비행으로 이동합니다. 모두 예약 완료된 상태예요.</p>
+
+  <div class="flight-list">
+    <div class="flight">
+      <div class="flight-top">
+        <div class="flight-route">인천 <span class="arr">→</span> 파리</div>
+        <div class="flight-num">OZ 501 · 아시아나</div>
+      </div>
+      <div class="flight-detail">
+        <div>날짜 — <strong>2026.07.05 (일)</strong></div>
+        <div>시간 — <strong>10:05 – 17:20</strong> (14h 15)</div>
+        <div>출발 — <strong>인천 T2</strong></div>
+        <div>도착 — <strong>파리 CDG T1</strong></div>
+      </div>
+    </div>
+    <div class="flight">
+      <div class="flight-top">
+        <div class="flight-route">파리 <span class="arr">→</span> 베니스</div>
+        <div class="flight-num">AF 1526 · 에어프랑스</div>
+      </div>
+      <div class="flight-detail">
+        <div>날짜 — <strong>2026.07.08 (수)</strong></div>
+        <div>시간 — <strong>18:40 – 20:15</strong> (1h 35)</div>
+        <div>출발 — <strong>파리 CDG T2F</strong></div>
+        <div>도착 — <strong>베니스 VCE</strong></div>
+      </div>
+    </div>
+    <div class="flight">
+      <div class="flight-top">
+        <div class="flight-route">베니스 <span class="arr">→</span> 파리</div>
+        <div class="flight-num">AF 1527 · 에어프랑스</div>
+      </div>
+      <div class="flight-detail">
+        <div>날짜 — <strong>2026.07.16 (목)</strong></div>
+        <div>시간 — <strong>21:10 – 23:00</strong> (1h 50)</div>
+        <div>출발 — <strong>베니스 VCE</strong></div>
+        <div>도착 — <strong>파리 CDG 2G</strong></div>
+      </div>
+    </div>
+    <div class="flight">
+      <div class="flight-top">
+        <div class="flight-route">파리 <span class="arr">→</span> 인천</div>
+        <div class="flight-num">OZ 502 · 아시아나</div>
+      </div>
+      <div class="flight-detail">
+        <div>날짜 — <strong>2026.07.17 (금)</strong></div>
+        <div>시간 — <strong>19:10 – 14:10 (+1)</strong> (12h)</div>
+        <div>출발 — <strong>파리 CDG T1</strong></div>
+        <div>도착 — <strong>인천 T2</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 7. HOTELS ============== -->
+<section class="reveal">
+  <div class="eyebrow"><span class="num">07</span>STAYS</div>
+  <h2 class="serif">숙소 안내</h2>
+  <p class="lede">총 6개 숙소 모두 예약을 마쳤어요.</p>
+
+  <div class="hotel-list">
+    <div class="hotel">
+      <div class="hotel-num">i.</div>
+      <div class="hotel-info">
+        <h4>힘호텔 르 루브르 파리</h4>
+        <div class="meta">PARIS · Timhotel Le Louvre</div>
+      </div>
+      <div class="hotel-nights">3박</div>
+    </div>
+    <div class="hotel">
+      <div class="hotel-num">ii.</div>
+      <div class="hotel-info">
+        <h4>Locazione turistica 2</h4>
+        <div class="meta">VENEZIA · 베니스</div>
+      </div>
+      <div class="hotel-nights">1박</div>
+    </div>
+    <div class="hotel">
+      <div class="hotel-num">iii.</div>
+      <div class="hotel-info">
+        <h4>B&amp;B Hotel Passo Tre Croci Cortina</h4>
+        <div class="meta">CORTINA · 코르티나 담페초</div>
+      </div>
+      <div class="hotel-nights">3박</div>
+    </div>
+    <div class="hotel">
+      <div class="hotel-num">iv.</div>
+      <div class="hotel-info">
+        <h4>아비네아 돌로미티 로맨틱 스파 호텔</h4>
+        <div class="meta">DOLOMITI · Abinea Romantic Spa</div>
+      </div>
+      <div class="hotel-nights">1박</div>
+    </div>
+    <div class="hotel">
+      <div class="hotel-num">v.</div>
+      <div class="hotel-info">
+        <h4>Giardin Boutique Hotel B&amp;B</h4>
+        <div class="meta">ORTISEI · 오르티세이</div>
+      </div>
+      <div class="hotel-nights">3박</div>
+    </div>
+    <div class="hotel">
+      <div class="hotel-num">vi.</div>
+      <div class="hotel-info">
+        <h4>비앤비 호텔 파리 르와시 CDG</h4>
+        <div class="meta">PARIS · B&amp;B Roissy Airport</div>
+      </div>
+      <div class="hotel-nights">1박</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 8. SNAP PHOTOS ============== -->
+<section class="snap reveal">
+  <div class="eyebrow">A LITTLE SHOWCASE</div>
+  <div class="script-acc">Wedding Snap</div>
+  <h2 class="serif">결혼 스냅 사진,<br>함께 보실까요?</h2>
+  <p>지난 주말 촬영했던 사진들이에요.<br>여기서부터는 직접 보여드릴게요.</p>
+</section>
+
+<!-- ============== 9. CLOSING ============== -->
+<section class="closing reveal">
+  <div class="latin-tag">THANK YOU</div>
+  <div class="msg">
+    부족한 두 사람이지만<br>
+    서로 아끼며 잘 살아가겠습니다.<br><br>
+    앞으로도 따뜻하게 지켜봐주세요.<br>
+    잘 부탁드리겠습니다.
+  </div>
+  <div class="signature">Minhyeong &amp; Yumin</div>
+  <div class="ko-sig">민형 · 유민 드림</div>
+</section>
+
+<footer>2026 · 07 · 04 — OUR WEDDING DAY</footer>
+
+<!-- ============== LIGHTBOX ============== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="신혼집 사진 갤러리">
+  <div class="lb-bar">
+    <div class="lb-counter"><span id="lbIndex">1</span><span class="sep">/</span><span id="lbTotal">0</span></div>
+    <button class="lb-close" id="lbClose" aria-label="닫기">×</button>
+  </div>
+  <div class="lb-stage">
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="이전 사진">‹</button>
+    <div class="lb-img-wrap" id="lbImgWrap">
+      <img class="lb-img" id="lbImg" src="" alt="신혼집 사진">
+    </div>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="다음 사진">›</button>
+    <div class="lb-caption">SWIPE OR TAP ARROWS · ← → ESC</div>
+  </div>
+</div>
+<script>
+  // D-Day calc — counts down to 2026.07.04
+  (function(){
+    const target = new Date(2026, 6, 4);
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    const diff = Math.round((target - today)/(1000*60*60*24));
+    const el = document.getElementById('ddayNum');
+    if (el) el.textContent = diff > 0 ? ('D−' + diff) : (diff === 0 ? 'D−DAY' : 'D+' + Math.abs(diff));
+  })();
+
+  // reveal-on-scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  /* ---------- Photo gallery + Lightbox ---------- */
+  // Probes home1.jpg ~ home20.jpg, builds a sorted list of photos that actually exist,
+  // then wires up the grid and lightbox.
+  (function(){
+    const MAX_PHOTOS = 20;
+    const VISIBLE = 5;       // thumbs in grid
+    const photos = [];        // existing photo URLs in order
+    let current = 0;          // active index in lightbox
+
+    function probe(src){
+      return new Promise(resolve=>{
+        const img = new Image();
+        img.onload  = ()=>resolve(src);
+        img.onerror = ()=>resolve(null);
+        img.src = src;
+      });
+    }
+
+    async function buildGallery(){
+      const checks = [];
+      for(let i=1; i<=MAX_PHOTOS; i++) checks.push(probe('home'+i+'.jpg'));
+      const results = await Promise.all(checks);
+      results.forEach(s=>{ if(s) photos.push(s); });
+
+      const galleryEl = document.getElementById('homeGallery');
+      const hintEl   = document.getElementById('galleryHint');
+      const thumbs   = galleryEl.querySelectorAll('.photo');
+      const total    = photos.length;
+
+      // total counter in lightbox
+      document.getElementById('lbTotal').textContent = total;
+
+      // wire grid: each visible thumb opens lightbox at its own photo
+      thumbs.forEach((thumb, i)=>{
+        if(i < total){
+          thumb.style.cursor = 'pointer';
+          thumb.addEventListener('click', ()=>openLightbox(i));
+        } else {
+          thumb.style.cursor = 'default';
+        }
+      });
+
+      // "+N more" badge on the last visible thumb
+      if(total > VISIBLE){
+        const extra = total - VISIBLE;
+        const last = thumbs[VISIBLE - 1];
+        last.classList.add('has-more');
+        last.querySelector('.more-badge .plus').textContent = '+'+extra;
+        if(hintEl) hintEl.classList.remove('hidden');
+      } else if (total > 1) {
+        // a few photos but no overflow — still show a small hint
+        if(hintEl){
+          hintEl.textContent = 'TAP TO ENLARGE · 사진을 누르면 크게 볼 수 있어요';
+          hintEl.classList.remove('hidden');
+        }
+      }
+    }
+
+    /* ---- Lightbox ---- */
+    const lb       = document.getElementById('lightbox');
+    const lbImg    = document.getElementById('lbImg');
+    const lbIndex  = document.getElementById('lbIndex');
+    const lbPrev   = document.getElementById('lbPrev');
+    const lbNext   = document.getElementById('lbNext');
+    const lbClose  = document.getElementById('lbClose');
+    const lbWrap   = document.getElementById('lbImgWrap');
+
+    function show(i){
+      if(!photos.length) return;
+      current = (i + photos.length) % photos.length;
+      lbImg.classList.add('swap');
+      // tiny delay so the fade is visible
+      setTimeout(()=>{
+        lbImg.src = photos[current];
+        lbImg.alt = '신혼집 사진 ' + (current+1);
+        lbIndex.textContent = current + 1;
+        lbImg.classList.remove('swap');
+      }, 120);
+    }
+
+    function openLightbox(i){
+      if(!photos.length) return;
+      lb.classList.add('open');
+      document.body.classList.add('lb-locked');
+      show(i);
+    }
+    function closeLightbox(){
+      lb.classList.remove('open');
+      document.body.classList.remove('lb-locked');
+    }
+    function next(){ show(current + 1); }
+    function prev(){ show(current - 1); }
+
+    lbNext.addEventListener('click', next);
+    lbPrev.addEventListener('click', prev);
+    lbClose.addEventListener('click', closeLightbox);
+
+    // click outside the image closes
+    lb.addEventListener('click', (e)=>{
+      if(e.target === lb || e.target.classList.contains('lb-stage') || e.target === lbWrap){
+        closeLightbox();
+      }
+    });
+
+    // keyboard
+    document.addEventListener('keydown', (e)=>{
+      if(!lb.classList.contains('open')) return;
+      if(e.key === 'ArrowRight') next();
+      else if(e.key === 'ArrowLeft') prev();
+      else if(e.key === 'Escape') closeLightbox();
+    });
+
+    // touch swipe
+    let touchStartX = 0, touchStartY = 0, touchActive = false;
+    lbWrap.addEventListener('touchstart', (e)=>{
+      const t = e.touches[0];
+      touchStartX = t.clientX; touchStartY = t.clientY; touchActive = true;
+    }, {passive:true});
+    lbWrap.addEventListener('touchend', (e)=>{
+      if(!touchActive) return;
+      touchActive = false;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - touchStartX;
+      const dy = t.clientY - touchStartY;
+      if(Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)){
+        if(dx < 0) next(); else prev();
+      }
+    });
+
+    // boot
+    buildGallery();
+  })();
+</script>
+</body>
+</html>
