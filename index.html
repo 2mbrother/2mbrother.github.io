@@ -1219,4 +1219,103 @@
 <script type="text/javascript" id="" charset="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","2118640481982260");fbq("set","agent","tmgoogletagmanager","2118640481982260");fbq("track","PageView");</script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2118640481982260&amp;ev=PageView&amp;noscript=1"></noscript>
 <script type="text/javascript" id="" charset="">kakaoPixel("6162144706209888492").pageView();</script>
+
+ <!-- ▼▼▼ 배경음악 자동재생 (브라우저 차단 시 첫 터치/클릭/스크롤에서 자동 시작) ▼▼▼ -->
+    <script type="text/javascript">
+    (function () {
+        var audio = document.getElementById('mp3_player');
+        var btn = document.querySelector('.bgm_play_btn');
+        if (!audio) return;
+
+        audio.loop = true;
+        audio.volume = 1.0;
+
+        // 재생 버튼 아이콘 상태 동기화 (pause=재생중, play=멈춤 — 바른손 CSS 규칙)
+        function syncBtn() {
+            if (!btn) return;
+            if (audio.paused) {
+                btn.classList.remove('pause');
+                btn.classList.add('play');
+            } else {
+                btn.classList.remove('play');
+                btn.classList.add('pause');
+            }
+        }
+        audio.addEventListener('play', syncBtn);
+        audio.addEventListener('pause', syncBtn);
+
+        var started = false;
+        function tryPlay() {
+            var p = audio.play();
+            if (p && typeof p.then === 'function') {
+                p.then(function () {
+                    started = true;
+                    removeGestureListeners();
+                    syncBtn();
+                }).catch(function () {
+                    // 자동재생 차단됨 → 첫 사용자 동작을 기다림
+                    addGestureListeners();
+                });
+            }
+        }
+
+        function onFirstGesture() {
+            if (started) return;
+            var p = audio.play();
+            if (p && typeof p.then === 'function') {
+                p.then(function () {
+                    started = true;
+                    removeGestureListeners();
+                    syncBtn();
+                }).catch(function () {});
+            } else {
+                started = true;
+                removeGestureListeners();
+                syncBtn();
+            }
+        }
+
+        var events = ['touchstart', 'touchend', 'click', 'scroll', 'keydown', 'pointerdown'];
+        function addGestureListeners() {
+            events.forEach(function (ev) {
+                document.addEventListener(ev, onFirstGesture, { once: false, passive: true });
+            });
+        }
+        function removeGestureListeners() {
+            events.forEach(function (ev) {
+                document.removeEventListener(ev, onFirstGesture, { passive: true });
+            });
+        }
+
+        // 재생 버튼을 직접 눌렀을 때 켜고/끄기 토글
+        if (btn) {
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                if (audio.paused) {
+                    audio.play().catch(function () {});
+                } else {
+                    audio.pause();
+                }
+                started = true;
+                setTimeout(syncBtn, 0);
+            }, true);
+        }
+
+        // 다른 탭에 갔다가 돌아오면 다시 재생 시도
+        document.addEventListener('visibilitychange', function () {
+            if (!document.hidden && started && audio.paused) {
+                audio.play().catch(function () {});
+            }
+        });
+
+        // 로딩 후 즉시 시도
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            tryPlay();
+        } else {
+            window.addEventListener('DOMContentLoaded', tryPlay);
+        }
+        window.addEventListener('load', function () { if (!started) tryPlay(); });
+    })();
+    </script>
+    <!-- ▲▲▲ 배경음악 자동재생 끝 ▲▲▲ -->
 </body></html>
